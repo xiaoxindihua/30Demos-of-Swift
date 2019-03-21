@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1Th-N1-dTE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Project01_Tap_or_Hold_Counter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QxU-Al-2nK">
+                                <rect key="frame" x="0.0" y="294" width="375" height="79"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="66"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q68-24-SjU">
+                                <rect key="frame" x="148" y="423" width="79" height="30"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="WH5-6v-czI"/>
+                                </constraints>
+                                <state key="normal" title="Tap or Hold"/>
+                                <connections>
+                                    <action selector="counterButtonClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="86o-hJ-5Ew"/>
+                                    <outletCollection property="gestureRecognizers" destination="qzH-3T-jNN" appends="YES" id="D4P-i9-OlZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="Q68-24-SjU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="MTe-9P-fa2"/>
+                            <constraint firstItem="QxU-Al-2nK" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="cYe-kE-GFo"/>
+                            <constraint firstItem="Q68-24-SjU" firstAttribute="top" secondItem="QxU-Al-2nK" secondAttribute="bottom" constant="50" id="dr4-4u-rqp"/>
+                            <constraint firstItem="QxU-Al-2nK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fGs-cM-1GA"/>
+                            <constraint firstItem="Q68-24-SjU" firstAttribute="centerX" secondItem="QxU-Al-2nK" secondAttribute="centerX" id="p0V-Wu-M7U"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QxU-Al-2nK" secondAttribute="trailing" id="peL-pw-epb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zsk-9s-cPA">
+                        <barButtonItem key="leftBarButtonItem" title="Reset" id="G7C-qh-SKS">
+                            <connections>
+                                <action selector="resetButtonClick:" destination="BYZ-38-t0r" id="AkN-28-yau"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="counterLabel" destination="QxU-Al-2nK" id="GP2-A4-B9I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="qzH-3T-jNN">
+                    <connections>
+                        <action selector="longPressed:" destination="BYZ-38-t0r" id="TxK-HB-LmO"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="713" y="-561"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aKm-Ef-b02">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1Th-N1-dTE" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sKA-01-MRm">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="bx2-jI-bNg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HVB-tt-O74" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="9" y="-560"/>
+        </scene>
+    </scenes>
+</document>
